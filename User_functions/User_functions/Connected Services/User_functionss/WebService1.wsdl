@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="getUserddata">
+        <s:complexType />
+      </s:element>
+      <s:element name="getUserddataResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUserddataResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getUserdblood">
+        <s:complexType />
+      </s:element>
+      <s:element name="getUserdbloodResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getUserdbloodResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getblooddate">
+        <s:complexType />
+      </s:element>
+      <s:element name="getblooddateResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getblooddateResult" type="tns:ArrayOfDateTime" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfDateTime">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="dateTime" type="s:dateTime" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="insert">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="name" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="age" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="w" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="gender" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="insertResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PersonID" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PersonName" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="PersonAge" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="PerosnWeight" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="PerosnGender" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateUserInfoResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Update_blood_pressure">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pass" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="bp" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Update_blood_pressureResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ViewUserInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PersonId" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="passs" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ViewUserInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ViewUserInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="check">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="id" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="checkResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="checkResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="blood_pressure">
+        <s:complexType />
+      </s:element>
+      <s:element name="blood_pressureResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="blood_pressureResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="getUserddataSoapIn">
+    <wsdl:part name="parameters" element="tns:getUserddata" />
+  </wsdl:message>
+  <wsdl:message name="getUserddataSoapOut">
+    <wsdl:part name="parameters" element="tns:getUserddataResponse" />
+  </wsdl:message>
+  <wsdl:message name="getUserdbloodSoapIn">
+    <wsdl:part name="parameters" element="tns:getUserdblood" />
+  </wsdl:message>
+  <wsdl:message name="getUserdbloodSoapOut">
+    <wsdl:part name="parameters" element="tns:getUserdbloodResponse" />
+  </wsdl:message>
+  <wsdl:message name="getblooddateSoapIn">
+    <wsdl:part name="parameters" element="tns:getblooddate" />
+  </wsdl:message>
+  <wsdl:message name="getblooddateSoapOut">
+    <wsdl:part name="parameters" element="tns:getblooddateResponse" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapIn">
+    <wsdl:part name="parameters" element="tns:insert" />
+  </wsdl:message>
+  <wsdl:message name="insertSoapOut">
+    <wsdl:part name="parameters" element="tns:insertResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="UpdateUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="Update_blood_pressureSoapIn">
+    <wsdl:part name="parameters" element="tns:Update_blood_pressure" />
+  </wsdl:message>
+  <wsdl:message name="Update_blood_pressureSoapOut">
+    <wsdl:part name="parameters" element="tns:Update_blood_pressureResponse" />
+  </wsdl:message>
+  <wsdl:message name="ViewUserInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:ViewUserInfo" />
+  </wsdl:message>
+  <wsdl:message name="ViewUserInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:ViewUserInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="checkSoapIn">
+    <wsdl:part name="parameters" element="tns:check" />
+  </wsdl:message>
+  <wsdl:message name="checkSoapOut">
+    <wsdl:part name="parameters" element="tns:checkResponse" />
+  </wsdl:message>
+  <wsdl:message name="blood_pressureSoapIn">
+    <wsdl:part name="parameters" element="tns:blood_pressure" />
+  </wsdl:message>
+  <wsdl:message name="blood_pressureSoapOut">
+    <wsdl:part name="parameters" element="tns:blood_pressureResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="getUserddata">
+      <wsdl:input message="tns:getUserddataSoapIn" />
+      <wsdl:output message="tns:getUserddataSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getUserdblood">
+      <wsdl:input message="tns:getUserdbloodSoapIn" />
+      <wsdl:output message="tns:getUserdbloodSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getblooddate">
+      <wsdl:input message="tns:getblooddateSoapIn" />
+      <wsdl:output message="tns:getblooddateSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="insert">
+      <wsdl:input message="tns:insertSoapIn" />
+      <wsdl:output message="tns:insertSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <wsdl:input message="tns:UpdateUserInfoSoapIn" />
+      <wsdl:output message="tns:UpdateUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Update_blood_pressure">
+      <wsdl:input message="tns:Update_blood_pressureSoapIn" />
+      <wsdl:output message="tns:Update_blood_pressureSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ViewUserInfo">
+      <wsdl:input message="tns:ViewUserInfoSoapIn" />
+      <wsdl:output message="tns:ViewUserInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="check">
+      <wsdl:input message="tns:checkSoapIn" />
+      <wsdl:output message="tns:checkSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="blood_pressure">
+      <wsdl:input message="tns:blood_pressureSoapIn" />
+      <wsdl:output message="tns:blood_pressureSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getUserddata">
+      <soap:operation soapAction="http://tempuri.org/getUserddata" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserdblood">
+      <soap:operation soapAction="http://tempuri.org/getUserdblood" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getblooddate">
+      <soap:operation soapAction="http://tempuri.org/getblooddate" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert">
+      <soap:operation soapAction="http://tempuri.org/insert" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap:operation soapAction="http://tempuri.org/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_blood_pressure">
+      <soap:operation soapAction="http://tempuri.org/Update_blood_pressure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewUserInfo">
+      <soap:operation soapAction="http://tempuri.org/ViewUserInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="check">
+      <soap:operation soapAction="http://tempuri.org/check" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blood_pressure">
+      <soap:operation soapAction="http://tempuri.org/blood_pressure" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getUserddata">
+      <soap12:operation soapAction="http://tempuri.org/getUserddata" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getUserdblood">
+      <soap12:operation soapAction="http://tempuri.org/getUserdblood" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getblooddate">
+      <soap12:operation soapAction="http://tempuri.org/getblooddate" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="insert">
+      <soap12:operation soapAction="http://tempuri.org/insert" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/UpdateUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Update_blood_pressure">
+      <soap12:operation soapAction="http://tempuri.org/Update_blood_pressure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ViewUserInfo">
+      <soap12:operation soapAction="http://tempuri.org/ViewUserInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="check">
+      <soap12:operation soapAction="http://tempuri.org/check" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="blood_pressure">
+      <soap12:operation soapAction="http://tempuri.org/blood_pressure" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44304/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44304/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
